@@ -47,11 +47,17 @@ function Mdd2Q() {
                 { showResults ? (
                     totalScore > 0 ? (
                     <>
-                        <p className='text-center'><span className='text-danger fw-bold'>ผิดปกติ</span> กรุณาทำแบบคัดกรอง 9Q</p>
+                        <p className='fs-4'>score <span className='fs-3 fw-bold'>{totalScore}</span></p>
+                        <p className='fs-5 fw-bold'>แปลผล</p>
+                        <p className='text-danger'>มีความเสี่ยงต่อภาวะซึมเศร้า<span className='fw-bold'>ผิดปกติ</span> กรุณาทำแบบคัดกรอง 9Q</p>
                         <Mdd9Q />
                     </>
                 ): (
-                    <p className='text-center'>ปกติ</p>
+                    <>
+                        <p className='fs-4'>score <span className='fs-3 fw-bold'>{totalScore}</span></p>
+                        <p className='fs-5 fw-bold'>แปลผล</p>
+                        <p className='text-success'>ไม่พบความเสี่ยงต่อภาวะซึมเศร้า<span className='fw-bold'>ปกติ</span></p>
+                    </>
                 )):null}
             </Row>
         </Container>

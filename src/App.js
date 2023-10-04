@@ -12,7 +12,6 @@ import ImgMdd from './assets/mdd.jpg'
 import ImgMiniCog from './assets/minicog.jpg'
 import ImgNutritionShort from './assets/nutritionshort.jpg'
 import ImgMSRA5 from './assets/msra5.jpg'
-import ImgFrail from './assets/frail.jpg'
 import ImgCCI from './assets/cci.jpg'
 import ImgWexner from './assets/wexner.jpg'
 import ImgInsomnia from './assets/insomnia.jpg'
@@ -46,13 +45,6 @@ const cardData = [
     text: 'แบบคัดกรองความเสี่ยงต่อภาวะมวลกล้ามเนื้อน้อย',
     keywords: 'กล้ามเนื้อลีบ, กล้ามเนื้อ, สูงอายุ, elderly',
     link: '/msra5'
-  },
-  {
-    img: ImgFrail,
-    title: 'FRAIL Scale',
-    text: 'แบบคัดกรองภาวะเปราะบาง',
-    keywords: 'elderly, ผู้สูงอายุ',
-    link: '/frail'
   },
   {
     img: ImgCCI,

@@ -55,17 +55,18 @@ function Mdd9Q() {
                 </Row>
             ))}
             </Form>
-            <hr />
             <Row>
+                <p className='fs-4'>score <span className='fs-3 fw-bold'>{totalScore}</span></p>
+                <p className='fs-5 fw-bold'>แปลผล</p>
                 { showResults ? (
                     totalScore >= 19 ? (
-                        <p className='text-center text-danger'>มีอาการเศร้าระดับ<span className='fw-bold'> รุนแรง</span></p>
+                        <p className='text-danger'>มีอาการเศร้าระดับ<span className='fw-bold'> รุนแรง</span></p>
                     ): totalScore >= 13 ? (
-                        <p className='text-center text-warning'>มีอาการเศร้าระดับ<span className='fw-bold'> ปานกลาง</span></p>
+                        <p className='text-warning'>มีอาการเศร้าระดับ<span className='fw-bold'> ปานกลาง</span></p>
                     ): totalScore >= 7 ? (
-                        <p className='text-center text-primary'>มีอาการเศร้าระดับ<span className='fw-bold'> น้อย</span></p>
+                        <p className='text-primary'>มีอาการเศร้าระดับ<span className='fw-bold'> น้อย</span></p>
                     ): (
-                        <p className='text-center text-success'>ไม่มีอาการ หรือมีอาการซึมเศร้าระดับน้อย</p>
+                        <p className='text-success'>ไม่มีอาการ หรือมีอาการซึมเศร้าระดับน้อย</p>
                     )
                 ) : null }
             </Row>

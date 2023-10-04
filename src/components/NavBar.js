@@ -4,6 +4,17 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { BoxSeam } from 'react-bootstrap-icons'
 
+const menuLink = [
+  {name: 'MDD', link: '/mdd'},
+  {name: 'MiniCog', link: '/minicog'},
+  {name: 'MNA Short', link:'/mnashort'},
+  {name: 'MSRA-5', link:'/msra5'},
+  {name: 'CCI', link:'/cci'},
+  {name: 'Wexner', link:'/wexner'},
+  {name: 'ISI', link:'/insomnia'},
+  {name: 'GAD-7', link:'/anxiety'}
+]
+
 function NavBar() {
   return (
     <Container fluid className='mb-2'>
@@ -14,15 +25,9 @@ function NavBar() {
         <Navbar.Toggle aria-controls="navbar-nav" />
         <Navbar.Collapse id="navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/mdd">MDD</Nav.Link>
-            <Nav.Link href="/minicog">MiniCog</Nav.Link>
-            <Nav.Link href="/mnashort">MNA Short</Nav.Link>
-            <Nav.Link href="/msra5">MSRA-5</Nav.Link>
-            <Nav.Link href="/frail">FRAIL Scale</Nav.Link>
-            <Nav.Link href='/cci'>CCI</Nav.Link>
-            <Nav.Link href='/wexner'>Wexner</Nav.Link>
-            <Nav.Link href='/insomnia'>ISI</Nav.Link>
-            <Nav.Link href='/anxiety'>GAD-7</Nav.Link>
+            {menuLink.map((link, index) => (
+              <Nav.Link key={index} href={link.link}>{link.name}</Nav.Link>
+            ))}
           </Nav>
         </Navbar.Collapse>
       </Container>

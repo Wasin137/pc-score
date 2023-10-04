@@ -61,9 +61,11 @@ function MiniCog() {
                         <Form.Check inline type='checkbox' label='ภูเขา' id='threeWord3' onChange={InputScore(3)}/>
                     </div>
                 </Row>
+                <p className='fs-4'>score <span className='fs-3 fw-bold'>{totalScore}</span></p>
+                <p className='fs-5 fw-bold'>แปลผล</p>
                 {showResults ? (
                     <Row>
-                        <p className='text-start'>คะแนน {totalScore} แปลผล {InterpreteScore(totalScore)}</p>
+                        {InterpreteScore(totalScore)}
                     </Row>
                 ): null}
             </Form>

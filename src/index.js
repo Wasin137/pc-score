@@ -12,7 +12,6 @@ import {
 import NavBar from './components/NavBar';
 import MNAShort from './components/MNAShort';
 import MSRA5 from './components/MSRA5';
-import Frail from './components/Frail';
 import Charlson from './components/Charlson';
 import Wexner from './components/Wexner';
 import Footer from './components/Footer';
@@ -39,10 +38,6 @@ const router = createBrowserRouter([
   {
     path: "/msra5",
     element: <MSRA5 />
-  },
-  {
-    path: "/frail",
-    element: <Frail />
   },
   {
     path: "/cci",
