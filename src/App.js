@@ -23,54 +23,63 @@ const cardData = [
     img: ImgMdd,
     title: '2Q, 9Q',
     text: 'แบบคัดกรองโรคซึมเศร้า สอบถามผู้ป่วยในช่วง 2 สัปดาห์ที่ผ่านมา',
+    keywords: 'mdd, depress, depression',
     link: '/mdd'
   },
   {
     img: ImgMiniCog,
     title: 'Mini Cog',
     text: 'แบบคัดกรองภาวะ Cognitive impairment (แบบย่อ)',
+    keywords: 'เรียนรู้, สมอง, สูงอายุ, elderly',
     link: '/minicog'
   },
   {
     img: ImgNutritionShort,
     title: 'Mini Nutritional Assessment (Short form)',
     text: 'แบบคัดกรองภาวะโภชนาการในผู้สูงอายุ',
+    keywords: 'สารอาหาร, elderly',
     link: '/mnashort'
   },
   {
     img: ImgMSRA5,
     title: 'Modified Mini Sarcopenia Risk Assessment-5',
     text: 'แบบคัดกรองความเสี่ยงต่อภาวะมวลกล้ามเนื้อน้อย',
+    keywords: 'กล้ามเนื้อลีบ, กล้ามเนื้อ, สูงอายุ, elderly',
     link: '/msra5'
   },
   {
     img: ImgFrail,
     title: 'FRAIL Scale',
     text: 'แบบคัดกรองภาวะเปราะบาง',
+    keywords: 'elderly, ผู้สูงอายุ',
     link: '/frail'
   },
   {
     img: ImgCCI,
     title: 'Charlson Comorbidity Index (CCI)',
     text: 'Predicts 10-year survival in patients with multiple comorbidities.',
+    keywords: 'comorbid, disease, underlying, prediction',
     link: '/cci'
   },
   {
     img: ImgWexner,
     title: 'Wexner constipation score',
     text: 'Severity of constipation.',
+    keywords: 'ท้องผูก, ขับถ่าย',
     link: '/wexner'
   },
   {
     img: ImgInsomnia,
     title: 'Insomnia severity index (ISI)',
     text: 'Severity of insomnia',
+    keywords: 'นอนไม่หลับ, นอน',
     link: '/insomnia'
   },
   {
     img: ImgAnxiety,
     title: 'GAD-7',
     text: 'Generalized anxiety disorder 7-items คัดกรองภาวะวิตกกังวล',
+    keywords: 'วิตกกังวล, คัดกรอง',
     link: '/anxiety'
   }
 ];
@@ -80,7 +89,8 @@ function App() {
 
   const filteredCards = cardData.filter(card => 
     card.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
-    card.text.toLowerCase().includes(searchTerm.toLowerCase())
+    card.text.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    card.keywords.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase())
   )
 
   return (

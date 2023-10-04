@@ -82,11 +82,12 @@ function FrailQ4({ onAnswerChange }) {
             <Col xs={1}></Col>
             <Col>
                 <div>
-                    {choices.map((choice, index) => (
+                    {choices.map((choice) => (
                     <Form.Check
                         key={choice.name}
                         inline
                         type='checkbox'
+                        id={choice.name}
                         name={choice.name}
                         value={choice.name}
                         label={choice.label}

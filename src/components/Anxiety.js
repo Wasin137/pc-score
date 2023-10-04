@@ -45,10 +45,10 @@ function Anxiety() {
                     </Col>
                     <Col xs={6}>
                         <div>
-                            <Form.Check inline type='radio' name={`9Q${index + 1}`} value={0} label='ไม่เลย' onChange={InputScore(index)}/>
-                            <Form.Check inline type='radio' name={`9Q${index + 1}`} value={1} label='บางวัน' onChange={InputScore(index)}/>
-                            <Form.Check inline type='radio' name={`9Q${index + 1}`} value={2} label='เกินกว่า 7 วัน' onChange={InputScore(index)}/>
-                            <Form.Check inline type='radio' name={`9Q${index + 1}`} value={3} label='เกือบทุกวัน' onChange={InputScore(index)}/>
+                            <Form.Check inline type='radio' id={`9Q${index + 1}c1`} name={`9Q${index + 1}`} value={0} label='ไม่เลย' onChange={InputScore(index)}/>
+                            <Form.Check inline type='radio' id={`9Q${index + 1}c2`} name={`9Q${index + 1}`} value={1} label='บางวัน' onChange={InputScore(index)}/>
+                            <Form.Check inline type='radio' id={`9Q${index + 1}c3`} name={`9Q${index + 1}`} value={2} label='เกินกว่า 7 วัน' onChange={InputScore(index)}/>
+                            <Form.Check inline type='radio' id={`9Q${index + 1}c4`} name={`9Q${index + 1}`} value={3} label='เกือบทุกวัน' onChange={InputScore(index)}/>
                         </div>
                     </Col>
                 </Row>

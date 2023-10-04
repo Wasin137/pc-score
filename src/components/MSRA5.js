@@ -31,7 +31,7 @@ const questions = [
     {
         text: 'คุณรับประทานอาหาร 3 ม้ือเป็นประจ่าหรือไม่',
         choices: [
-            { value: 0, label: 'ไม่ ฉันข้ามอาหารบางมื้อตั้งแต่ 2 ครั้งต่อสัปดาห์ขึ้นไป (เช่น ฉันไม่รับประทานอาหารเช้า หรือรับประทานเพียงกาแฟผสมนม หรือซุปส่าหรับมื้อเย็น'},
+            { value: 0, label: 'ไม่ ฉันข้ามอาหารบางมื้อตั้งแต่ 2 ครั้งต่อสัปดาห์ขึ้นไป (เช่น ฉันไม่รับประทานอาหารเช้า หรือรับประทานเพียงกาแฟผสมนม หรือซุปสำหรับมื้อเย็น'},
             { value: 2, label: 'รับประทานอาหาร 3 มื้อเป็นประจ่า'}
         ]
     },
@@ -80,11 +80,12 @@ function MSRA5() {
                             <Col xs={1}></Col>
                             <Col>
                                 <div>
-                                    {question.choices.map(choice => (
+                                {question.choices.map((choice, choiceIndex) => (
                                         <Form.Check
                                             key={choice.value}
                                             inline
                                             type='radio'
+                                            id={`Q${index + 1}Choice${choiceIndex}`}
                                             name={`Q${index + 1}`}
                                             value={choice.value}
                                             label={choice.label}

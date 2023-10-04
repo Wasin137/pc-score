@@ -41,7 +41,7 @@ const questions = [
     {
         text: 'มีปัญหาทางจิตประสาท(Neuropsychologicalproblems)หรือไม่',
         choices: [
-            { value: 0, label: 'ความจำเสื่อหรือซึมเศร้าอย่างรุนแรง'},
+            { value: 0, label: 'ความจำเสื่อมหรือซึมเศร้าอย่างรุนแรง'},
             { value: 1, label: 'ความจำเสื่อมเล็กน้อย'},
             { value: 2, label: 'ไม่มีปัญหาทางประสาท'}
         ]
@@ -100,11 +100,12 @@ function MNAShort() {
                             <Col xs={1}></Col>
                             <Col>
                                 <div>
-                                    {question.choices.map(choice => (
+                                {question.choices.map((choice, choiceIndex) => (
                                         <Form.Check
                                             key={choice.value}
                                             inline
                                             type='radio'
+                                            id={`Q${index + 1}Choice${choiceIndex}`}
                                             name={`Q${index + 1}`}
                                             value={choice.value}
                                             label={choice.label}

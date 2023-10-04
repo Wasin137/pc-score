@@ -38,9 +38,9 @@ function MiniCog() {
                 </Row>
                 <Row>
                     <div>
-                        <Form.Check inline type='checkbox' label='หลานสาว'/>
-                        <Form.Check inline type='checkbox' label='สวรรค์'/>
-                        <Form.Check inline type='checkbox' label='ภูเขา'/>
+                        <Form.Check inline id='3w1' type='checkbox' label='หลานสาว'/>
+                        <Form.Check inline id='3w2' type='checkbox' label='สวรรค์'/>
+                        <Form.Check inline id='3w3' type='checkbox' label='ภูเขา'/>
                     </div>
                 </Row>
                 <Row className='mt-1'>

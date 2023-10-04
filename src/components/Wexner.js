@@ -122,11 +122,12 @@ function Wexner() {
                             <Col xs={1}></Col>
                             <Col>
                                 <div>
-                                    {question.choices.map(choice => (
+                                {question.choices.map((choice, choiceIndex) => (
                                         <Form.Check
                                             key={choice.value}
                                             inline
                                             type='radio'
+                                            id={`Q${index + 1}Choice${choiceIndex}`}
                                             name={`Q${index + 1}`}
                                             value={choice.value}
                                             label={choice.label}

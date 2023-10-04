@@ -46,10 +46,10 @@ function Mdd9Q() {
                     </Col>
                     <Col xs={6}>
                         <div>
-                            <Form.Check inline type='radio' name={`9Q${index + 1}`} value={0} label='ไม่มี' onChange={InputScore(index)}/>
-                            <Form.Check inline type='radio' name={`9Q${index + 1}`} value={1} label='1-7 วัน' onChange={InputScore(index)}/>
-                            <Form.Check inline type='radio' name={`9Q${index + 1}`} value={2} label='> 7 วัน' onChange={InputScore(index)}/>
-                            <Form.Check inline type='radio' name={`9Q${index + 1}`} value={3} label='ทุกวัน' onChange={InputScore(index)}/>
+                            <Form.Check inline type='radio' id={`9Q${index + 1}c1`} name={`9Q${index + 1}`} value={0} label='ไม่มี' onChange={InputScore(index)}/>
+                            <Form.Check inline type='radio' id={`9Q${index + 1}c2`} name={`9Q${index + 1}`} value={1} label='1-7 วัน' onChange={InputScore(index)}/>
+                            <Form.Check inline type='radio' id={`9Q${index + 1}c3`} name={`9Q${index + 1}`} value={2} label='> 7 วัน' onChange={InputScore(index)}/>
+                            <Form.Check inline type='radio' id={`9Q${index + 1}c4`} name={`9Q${index + 1}`} value={3} label='ทุกวัน' onChange={InputScore(index)}/>
                         </div>
                     </Col>
                 </Row>
