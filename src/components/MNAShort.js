@@ -5,6 +5,8 @@ import Col from 'react-bootstrap/esm/Col'
 import Form from 'react-bootstrap/Form'
 import { useState } from 'react'
 
+import usePageViews from './usePageViews';
+
 const questions = [
     {
         text: 'ในช่วง 3 เดือนที่ผ่านมา รับประทานอาหารได้น้อยลงเนื่องจากความอยากอาหารลดลง มีปัญหาการย่อย การ เคี้ยว หรือปัญหาการกลืนหรือไม่',
@@ -67,6 +69,8 @@ const questions = [
 function MNAShort() {
     const [answers, setAnswers] = useState({})
 
+    const { views, loading } = usePageViews('mnashort');
+
     const handleAnswerChange = (questionIndex, value) => {
         setAnswers({
             ...answers,
@@ -128,6 +132,9 @@ function MNAShort() {
                 ):(
                     <p className='fs-6 text-danger'>ขาดสารอาหาร</p>
                 )}
+            </Row>
+            <Row>
+                <p className='text-end fst-italic'>{loading ? "Loading viewed count..." : `This page has been viewed ${views} times.`}</p>
             </Row>
         </Container>
     )

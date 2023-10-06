@@ -4,11 +4,15 @@ import Row from 'react-bootstrap/esm/Row'
 import Form from 'react-bootstrap/Form';
 import { useState } from 'react';
 
+import usePageViews from './usePageViews';
+
 function MiniCog() {
     const [scores, setScores] = useState([0, 0, 0])
     const [showResults, setShowResults] = useState(false)
 
     const totalScore = scores.reduce((acc, curr) => acc + curr, 0);
+
+    const { views, loading } = usePageViews('minicog');
 
     const InputScore = (index) => (event) => {
         const score = (index === 0 && event.target.checked) ? 2 : (event.target.checked ? 1 : 0);
@@ -69,6 +73,9 @@ function MiniCog() {
                     </Row>
                 ): null}
             </Form>
+            <Row>
+                <p className='text-end fst-italic'>{loading ? "Loading viewed count..." : `This page has been viewed ${views} times.`}</p>
+            </Row>
         </Container>
     )
 }

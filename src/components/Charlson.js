@@ -5,6 +5,8 @@ import Col from 'react-bootstrap/esm/Col'
 import Form from 'react-bootstrap/Form'
 import { useState } from 'react'
 
+import usePageViews from './usePageViews';
+
 const questions = [
     {
         text: 'Age',
@@ -137,6 +139,8 @@ const questions = [
 function Charlson() {
     const [answers, setAnswers] = useState({})
 
+    const { views, loading } = usePageViews('cci');
+
     const handleAnswerChange = (questionIndex, value) => {
         setAnswers({
             ...answers,
@@ -194,6 +198,9 @@ function Charlson() {
             <Row>
                 <p className='fs-4'>score <span className='fs-3 fw-bold'>{computeTotalScore()}</span></p>
                 <p className='fs-4'>Estimated 10-year survival <span className='fs-3 fw-bold'>{tenYearSurvivalRate(computeTotalScore())}</span> %</p>
+            </Row>
+            <Row>
+                <p className='text-end fst-italic'>{loading ? "Loading viewed count..." : `This page has been viewed ${views} times.`}</p>
             </Row>
         </Container>
   )

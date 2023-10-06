@@ -5,6 +5,8 @@ import Col from 'react-bootstrap/esm/Col'
 import Form from 'react-bootstrap/Form'
 import { useState } from 'react'
 
+import usePageViews from './usePageViews';
+
 const questions = [
     {
         text: 'อายุเท่าไร',
@@ -46,6 +48,8 @@ const questions = [
 
 function MSRA5() {
     const [answers, setAnswers] = useState({})
+
+    const { views, loading } = usePageViews('msra5');
 
     const handleAnswerChange = (questionIndex, value) => {
         setAnswers({
@@ -106,6 +110,9 @@ function MSRA5() {
                 ):(
                     <p className='fs-6 text-danger'>มีความเสี่ยงต่อภาวะมวลกล้ามเนื้อน้อย</p>
                 )}
+            </Row>
+            <Row>
+                <p className='text-end fst-italic'>{loading ? "Loading viewed count..." : `This page has been viewed ${views} times.`}</p>
             </Row>
         </Container>
     )

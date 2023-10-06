@@ -5,6 +5,8 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import { useState } from 'react';
 
+import usePageViews from './usePageViews';
+
 const questions = [
     'ในช่วง 1 เดือนที่ผ่านมาท่านพยายามนอนแต่ไม่ค่อยหลับ',
     'ในช่วง 1 เดือนที่ผ่านมาเมื่อท่านตื่นขึ้นกลางดึกแล้ว พยายามนอนต่อแต่กลับไม่หลับ',
@@ -21,6 +23,8 @@ function Insomnia() {
     const [showResults, setShowResults] = useState(false)
 
     const totalScore = scores.reduce((acc, curr) => acc + curr, 0);
+
+    const { views, loading } = usePageViews('insomnia');
 
     const InputScore = (index) => (event) => {
         const score = parseInt(event.target.value, 10);
@@ -69,6 +73,9 @@ function Insomnia() {
                         <p className='text-success'>ผู้ป่วยไม่มีอาการนอนไม่หลับเลย</p>
                     )
                 ) : null }
+            </Row>
+            <Row>
+                <p className='text-end fst-italic'>{loading ? "Loading viewed count..." : `This page has been viewed ${views} times.`}</p>
             </Row>
         </Container>
   )

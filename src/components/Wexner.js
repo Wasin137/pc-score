@@ -5,6 +5,8 @@ import Col from 'react-bootstrap/esm/Col'
 import Form from 'react-bootstrap/Form'
 import { useState } from 'react'
 
+import usePageViews from './usePageViews';
+
 const questions = [
     {
         text: 'Frequency of bowel movements',
@@ -89,6 +91,8 @@ const questions = [
 function Wexner() {
     const [answers, setAnswers] = useState({})
 
+    const { views, loading } = usePageViews('wexner');
+
     const handleAnswerChange = (questionIndex, value) => {
         setAnswers({
             ...answers,
@@ -142,6 +146,9 @@ function Wexner() {
             </Form>
             <Row>
                 <p className='fs-4'>score <span className='fs-3 fw-bold'>{computeTotalScore()}</span></p>
+            </Row>
+            <Row>
+                <p className='text-end fst-italic'>{loading ? "Loading viewed count..." : `This page has been viewed ${views} times.`}</p>
             </Row>
         </Container>
   )

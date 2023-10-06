@@ -6,12 +6,15 @@ import Form from 'react-bootstrap/Form';
 import { useState } from 'react';
 
 import Mdd9Q from "./Mdd9Q";
+import usePageViews from './usePageViews';
 
 function Mdd2Q() {
     const [scores, setScores] = useState([0, 0])
     const [showResults, setShowResults] = useState(false)
 
     const totalScore = scores.reduce((acc, curr) => acc + curr, 0);
+
+    const { views, loading } = usePageViews('mdd');
 
     const InputScore = (index) => (event) => {
         const score = event.target.checked ? 1 : 0;
@@ -59,6 +62,9 @@ function Mdd2Q() {
                         <p className='text-success'>ไม่พบความเสี่ยงต่อภาวะซึมเศร้า<span className='fw-bold'>ปกติ</span></p>
                     </>
                 )):null}
+            </Row>
+            <Row>
+                <p className='text-end fst-italic'>{loading ? "Loading viewed count..." : `This page has been viewed ${views} times.`}</p>
             </Row>
         </Container>
     )

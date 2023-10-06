@@ -5,6 +5,8 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import { useState } from 'react';
 
+import usePageViews from './usePageViews';
+
 const questions = [
     'รู้สึกตึงเครียด วิตกกังวล หรือ กระวนกระวาย',
     'ไม่สามารถหยุดหรือควบคุมความกังวลได้',
@@ -20,6 +22,8 @@ function Anxiety() {
     const [showResults, setShowResults] = useState(false)
 
     const totalScore = scores.reduce((acc, curr) => acc + curr, 0);
+
+    const { views, loading } = usePageViews('anxiety');
 
     const InputScore = (index) => (event) => {
         const score = parseInt(event.target.value, 10);
@@ -68,6 +72,9 @@ function Anxiety() {
                         <p className='text-success'>ไม่มีอาการหรือมีอาการวิตกกังวลระดับเล็กน้อย<span className='fw-bold'> Minimal anxiety</span></p>
                     )
                 ) : null }
+            </Row>
+            <Row>
+                <p className='text-end fst-italic'>{loading ? "Loading viewed count..." : `This page has been viewed ${views} times.`}</p>
             </Row>
         </Container>
     )

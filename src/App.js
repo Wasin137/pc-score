@@ -8,6 +8,8 @@ import Card from 'react-bootstrap/Card'
 import Form from 'react-bootstrap/Form'
 import './App.css'
 
+import usePageViews from './components/usePageViews';
+
 import ImgMdd from './assets/mdd.jpg'
 import ImgMiniCog from './assets/minicog.jpg'
 import ImgNutritionShort from './assets/nutritionshort.jpg'
@@ -79,6 +81,8 @@ const cardData = [
 function App() {
   const [searchTerm, setSearchTerm] = useState('')
 
+  const { views, loading } = usePageViews('index');
+
   const filteredCards = cardData.filter(card => 
     card.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
     card.text.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -117,6 +121,9 @@ function App() {
             </Card>
           </Col>
         ))}
+      </Row>
+      <Row>
+        <p className='text-end fst-italic'>{loading ? "Loading viewed count..." : `This page has been viewed ${views} times.`}</p>
       </Row>
     </Container>
   )
