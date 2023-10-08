@@ -12,7 +12,8 @@ const menuLink = [
   {name: 'CCI', link:'/cci'},
   {name: 'Wexner', link:'/wexner'},
   {name: 'ISI', link:'/insomnia'},
-  {name: 'GAD-7', link:'/anxiety'}
+  {name: 'GAD-7', link:'/anxiety'},
+  {name: 'IPSS', link:'/ipss'}
 ]
 
 function NavBar() {

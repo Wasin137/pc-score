@@ -18,6 +18,7 @@ import ImgCCI from './assets/cci.jpg'
 import ImgWexner from './assets/wexner.jpg'
 import ImgInsomnia from './assets/insomnia.jpg'
 import ImgAnxiety from './assets/anxiety.jpg'
+import ImgIPSS from './assets/ipss.jpg'
 
 const cardData = [
   {
@@ -75,6 +76,13 @@ const cardData = [
     text: 'Generalized anxiety disorder 7-items คัดกรองภาวะวิตกกังวล',
     keywords: 'วิตกกังวล, คัดกรอง',
     link: '/anxiety'
+  },
+  {
+    img: ImgIPSS,
+    title: 'IPSS',
+    text: 'International prosate symptom score แบบประเมินอาการความรุนแรงต่อมลูกหมากโต',
+    keywords: 'bph, ต่อมลูกหมาก, ปัสสาวะ, ปัสสาวะขัด',
+    link: '/ipss'
   }
 ];
 

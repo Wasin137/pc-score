@@ -17,6 +17,8 @@ import Wexner from './components/Wexner';
 import Footer from './components/Footer';
 import Insomnia from './components/Insomnia';
 import Anxiety from './components/Anxiety';
+import IPSS from './components/IPSS';
+import ViewRank from './components/ViewRank';
 
 const router = createBrowserRouter([
   {
@@ -54,6 +56,14 @@ const router = createBrowserRouter([
   {
     path: "/anxiety",
     element: <Anxiety />
+  },
+  {
+    path: "/ipss",
+    element: <IPSS />
+  },
+  {
+    path: "/viewrank",
+    element: <ViewRank />
   }
 ]);
 
